@@ -3,56 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>todoMVC</title>
 </head>
 <body>
-    <nav>
-        <a href="http://www.google.com"target="blank">Google</a>
-    </nav>  
-    <br/>
-    <header>
-        <img src="./assets/images/title.png" alt="todos">
-    </header>
-    <section>
-        <form>
-            <button type="button">全選</button>
-            <input type="text"placeholder="要做什麼事?"/>
-        </form>
-    </section>
+    <div class="container">
+        <header>
+          <img src="./assets/images/title.png" alt="todos">
+        </header>
+        <section>
+            <form>
+                <button type="button">全選</button>
+                <input type="text"placeholder="要做什麼事?"/>
+            </form>
+        </section>
         
-    <section>
-        <ul>
-            <li>
-                <input type="checkbox"/>
-                <span>Item 1</span>
-                <button type="button">X</button>
-            </li>
-            <li>
-                <input type="checkbox"/>
-                <span>Item 2</span>
-                <button type="button">X</button>
-            </li>
-            <li>
-                <input type="checkbox"/>
-                <span>Item 3</span>
-                <button type="button">X</button>
-            </li>
-            <li>
-                <input type="checkbox"/>
-                <span>Item 4</span>
-                <button type="button">X</button>
-            </li>
-            
-        </ul>
-    </section>
-    <footer>
-        <span>x 項目</span>
-        <button type="button">全部</button>
-        <button type="button">進行中</button>
-        <button type="button">已完成</button>
-        <button type="button">清除已完成</button>
-        
-    </footer>
- 
+        <section>
+            <ul>
+                <li>
+                    <input type="checkbox"/>
+                    <span>Item 1</span>
+                    <button type="button">X</button>
+                </li>
+                <li>
+                    <input type="checkbox"/>
+                 <span>Item 2</span>
+                    <button type="button">X</button>
+                </li>
+                <li>
+                    <input type="checkbox"/>
+                    <span>Item 3</span>
+                    <button type="button">X</button>
+                </li>
+                <li>
+                    <input type="checkbox"/>
+                    <span>Item 4</span>
+                    <button type="button">X</button>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <span>x 項目</span>
+            <button type="button">全部</button>
+            <button type="button">進行中</button>
+            <button type="button">已完成</button>
+            <button type="button">清除已完成</button>
+        </footer>
+    </div>
 </body>
 </html>
