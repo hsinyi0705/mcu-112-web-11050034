@@ -5,4 +5,6 @@
   已完成
 </button>
 
-{{ content }} - {{ hasFinished }}
+<span [style.text-decoration]="hasFinished ? 'line-through' : 'none'">
+  {{ content }}
+</span>
