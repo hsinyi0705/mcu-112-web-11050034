@@ -5,6 +5,4 @@
   已完成
 </button>
 
-<span [style.text-decoration]="hasFinished ? 'line-through' : 'none'">
-  {{ content }}
-</span>
+<span [class.completed]="hasFinished">{{ id }}.{{ content }} </span>
