@@ -25,14 +25,19 @@ export class TodoComponent {
 
   @Input({ transform: booleanAttribute })
   hasFinished!: boolean;
-
   @Output()
-  readonly hasFinishedChange = new EventEmitter();
+  readonly hasFinishedChange = new EventEmitter<boolean>();
+
+  @Input()
+  finishDate?: Date;
+  @Output()
+  readonly finishDateChange = new EventEmitter<Date | undefined>();
 
   @HostBinding('class')
   class = 'app-todo';
 
   onSetStatus(hasFinished: boolean): void {
     this.hasFinishedChange.emit(hasFinished);
+    this.finishDateChange.emit(hasFinished ? new Date() : undefined);
   }
 }
