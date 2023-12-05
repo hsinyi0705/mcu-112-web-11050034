@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { TaskService } from './services/task.service';
+import { Component, Injectable, inject } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +15,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  taskService = inject(TaskService);
+
   tasks = [new Todo(1, '待辦事項 A'), new Todo(2, '待辦事項 B')];
 
   onStateChange(task: { index: number; state: boolean }): void {
