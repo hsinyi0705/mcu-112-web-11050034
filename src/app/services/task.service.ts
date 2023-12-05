@@ -17,5 +17,9 @@ export class TaskService {
     this.tasks.push(task);
   }
 
-  constructor() {}
+  updateState(id: number, hasFinished: boolean): void {
+    const index = this.tasks.findIndex((task) => task.id === id);
+    this.tasks[index].hasFinished = hasFinished;
+    this.tasks[index].finishDate = hasFinished ? new Date() : undefined;
+  }
 }
