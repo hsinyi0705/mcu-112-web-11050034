@@ -5,11 +5,12 @@ import { HeaderComponent } from './header/header.component';
 import { TodoComponent } from './todo/todo.component';
 import { FooterComponent } from './footer/footer.component';
 import { Todo } from './model/todo';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, TodoComponent, FooterComponent, JsonPipe],
+  imports: [HeaderComponent, TodoListComponent, FooterComponent, JsonPipe],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
