@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
-import { TodoComponent } from './todo/todo.component';
 import { FooterComponent } from './footer/footer.component';
 import { Todo } from './model/todo';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -15,14 +14,14 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  task = new Todo(1, '待辦事項 A');
+  tasks = [new Todo(1, '待辦事項 A'), new Todo(2, '待辦事項 B')];
 
-  onStateChange(state: boolean): void {
-    if (state) {
-      this.task.setFinished(new Date());
+  onStateChange(task: { index: number; state: boolean }): void {
+    if (task.state) {
+      this.tasks[task.index].setFinished(new Date());
     } else {
-      this.task.finishDate = undefined;
-      this.task.hasFinished = false;
+      this.tasks[task.index].finishDate = undefined;
+      this.tasks[task.index].hasFinished = false;
     }
   }
 }
