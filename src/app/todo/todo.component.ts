@@ -30,6 +30,10 @@ export class TodoComponent {
   @HostBinding('class')
   class = 'app-todo';
 
+  ngOnInit(): void {
+    console.log('ng on init');
+  }
+
   onSetStatus(hasFinished: boolean): void {
     this.stateChange.emit(hasFinished);
   }

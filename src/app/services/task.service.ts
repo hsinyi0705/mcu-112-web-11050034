@@ -6,7 +6,11 @@ import { Todo } from '../model/todo';
   providedIn: 'root',
 })
 export class TaskService {
-  tasks: Todo[] = [];
+  private tasks: Todo[] = [];
+
+  getAll(): Todo[] {
+    return this.tasks;
+  }
 
   add(content: string): void {
     const id =
