@@ -4,6 +4,7 @@ export class Todo {
     public content: string,
     public hasFinished: boolean = false
   ) {}
+
   finishDate?: Date;
 
   setFinished(finishDate: Date): void {
