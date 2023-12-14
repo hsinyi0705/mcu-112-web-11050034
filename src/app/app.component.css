@@ -11,3 +11,7 @@ div.container {
 .app-todo {
   border-bottom: solid 1px #ededed;
 }
+
+.todo-detail {
+  margin-top: 50px;
+}

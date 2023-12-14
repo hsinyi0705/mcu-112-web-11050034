@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TodoComponent } from '../todo/todo.component';
-import { Todo } from '../model/todo';
 import { NgFor, NgIf } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { Todo } from '../model/todo';
+import { TodoComponent } from '../todo/todo.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,6 +17,9 @@ export class TodoListComponent {
 
   @Output()
   remove = new EventEmitter<number>();
+
+  @Output()
+  view = new EventEmitter<number>();
 
   @Output()
   stateChange = new EventEmitter<{ id: number; state: boolean }>();
