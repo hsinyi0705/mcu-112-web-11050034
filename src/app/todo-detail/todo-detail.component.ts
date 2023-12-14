@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskService } from '../services/task.service';
+import { TaskRemoteService } from '../services/task-remote.service';
 
 @Component({
   selector: 'app-todo-detail',
@@ -25,12 +26,12 @@ export class TodoDetailComponent implements OnChanges {
 
   task?: Todo;
 
-  private readonly taskService = inject(TaskService);
+  private readonly taskService = inject(TaskRemoteService);
 
   @HostBinding('class')
   class = 'todo-detail';
 
   ngOnChanges(): void {
-    this.task = this.taskService.getById(this.id);
+    this.taskService.getById(this.id).subscribe((task) => (this.task = task));
   }
 }
