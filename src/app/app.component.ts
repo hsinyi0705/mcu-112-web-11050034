@@ -1,5 +1,6 @@
+import { Observable } from 'rxjs';
 import { Component, Injectable, OnInit, inject } from '@angular/core';
-import { JsonPipe, NgIf } from '@angular/common';
+import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,6 +14,7 @@ import { TaskRemoteService } from './services/task-remote.service';
   standalone: true,
   imports: [
     NgIf,
+    AsyncPipe,
     HeaderComponent,
     TodoListComponent,
     TodoDetailComponent,
@@ -24,12 +26,12 @@ import { TaskRemoteService } from './services/task-remote.service';
 export class AppComponent implements OnInit {
   taskService = inject(TaskRemoteService);
 
-  tasks: Todo[] = [];
+  tasks$!: Observable<Todo[]>;
 
   selectedId?: number;
 
   ngOnInit(): void {
-    this.taskService.getAll().subscribe((tasks) => (this.tasks = tasks));
+    this.tasks$ = this.taskService.getAll();
   }
 
   onAdd(): void {
