@@ -1,6 +1,6 @@
-import { Observable, Subject, startWith, switchMap } from 'rxjs';
 import { Component, Injectable, OnInit, inject } from '@angular/core';
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
+import { Observable, Subject, startWith, switchMap } from 'rxjs';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -8,6 +8,7 @@ import { Todo } from './model/todo';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TaskRemoteService } from './services/task-remote.service';
+import { TaskService } from './services/task.service';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ import { TaskRemoteService } from './services/task-remote.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  taskService = inject(TaskRemoteService);
+  taskService = inject(TaskService);
 
   tasks$!: Observable<Todo[]>;
 
