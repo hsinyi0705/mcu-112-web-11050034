@@ -53,8 +53,8 @@ export class AppComponent implements OnInit {
     ).pipe(switchMap(() => this.taskService.getAll(this.search$.value)));
   }
 
-  onAdd(): void {
-    this.taskService.add('待辦事項 C').subscribe(() => this.refresh$.next());
+  onSave(task: Todo): void {
+    this.taskService.add(task).subscribe(() => this.refresh$.next());
   }
 
   onRemove(id: number): void {
