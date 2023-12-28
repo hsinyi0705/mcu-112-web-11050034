@@ -1,5 +1,11 @@
+import { NgIf } from '@angular/common';
 import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 import { ITodoForm } from '../interface/todo-form.interface';
 import { Todo } from '../model/todo';
@@ -7,7 +13,7 @@ import { Todo } from '../model/todo';
 @Component({
   selector: 'app-todo-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [NgIf, ReactiveFormsModule],
   templateUrl: './todo-form.component.html',
   styleUrl: './todo-form.component.css',
 })
@@ -19,7 +25,9 @@ export class TodoFormComponent {
   readonly save = new EventEmitter<Todo>();
 
   readonly form = new FormGroup<ITodoForm>({
-    content: new FormControl<string | null>(null),
+    content: new FormControl<string | null>(null, {
+      validators: [Validators.required],
+    }),
   });
 
   get formData(): Todo {
