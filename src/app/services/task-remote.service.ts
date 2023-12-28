@@ -1,5 +1,5 @@
-import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Todo } from '../model/todo';
@@ -17,8 +17,9 @@ export class TaskRemoteService {
     return this.httpClient.get<Todo | undefined>(`${this.url}/${id}`);
   }
 
-  getAll(): Observable<Todo[]> {
+  getAll(content: string | null): Observable<Todo[]> {
     console.log('Task Remote Service - getAll');
+    const url = content ? `${this.url}?content_like=${content}` : this.url;
     return this.httpClient.get<Todo[]>(this.url);
   }
 
