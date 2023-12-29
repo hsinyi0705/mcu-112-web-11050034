@@ -18,6 +18,7 @@ import { TaskRemoteService } from './services/task-remote.service';
 import { TaskService } from './services/task.service';
 import { TodoSearchComponent } from './todo-search/todo-search.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
   imports: [
     NgIf,
     AsyncPipe,
+    NavBarComponent,
     HeaderComponent,
     TodoListComponent,
     TodoDetailComponent,

@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+nav {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span {
+  color: green;
+  font-weight: bold; /*字粗體*/
+  font-size: 20px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /*字中間空隙*/
+}
+
+li,
+li > a {
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li > a:hover {
+  /*hover讓滑鼠移過去有反應*/
+  color: rgba(0, 0, 0, 0.7);
+}
