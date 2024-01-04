@@ -28,7 +28,6 @@ import { Router } from '@angular/router';
     HeaderComponent,
     TodoListComponent,
     TodoSearchComponent,
-    TodoFormComponent,
     FooterComponent,
   ],
   templateUrl: './todo-page.component.html',
@@ -52,8 +51,8 @@ export class TodoPageComponent implements OnInit {
     ).pipe(switchMap(() => this.taskService.getAll(this.search$.value)));
   }
 
-  onSave(task: Todo): void {
-    this.taskService.add(task).subscribe(() => this.refresh$.next());
+  onAdd(): void {
+    this.router.navigate(['todo-form']);
   }
 
   onRemove(id: number): void {
