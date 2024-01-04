@@ -34,3 +34,8 @@ li > a:hover {
   /*hover讓滑鼠移過去有反應*/
   color: rgba(0, 0, 0, 0.7);
 }
+
+li > a.active {
+  color: blue;
+  font-weight: bolder;
+}
