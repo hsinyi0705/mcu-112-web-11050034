@@ -16,6 +16,9 @@ export class TodoListComponent {
   tasks!: Todo[] | null;
 
   @Output()
+  edit = new EventEmitter<number>();
+
+  @Output()
   remove = new EventEmitter<number>();
 
   @Output()
