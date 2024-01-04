@@ -1,26 +1,25 @@
-import { Component, Injectable, OnInit, inject } from '@angular/core';
-import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   BehaviorSubject,
-  Observable,
-  Subject,
   merge,
+  Observable,
   startWith,
+  Subject,
   switchMap,
 } from 'rxjs';
 
-import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../header/header.component';
 import { Todo } from '../model/todo';
-import { TodoListComponent } from '../todo-list/todo-list.component';
-import { TodoDetailComponent } from '../todo-detail/todo-detail.component';
-import { TaskRemoteService } from '../services/task-remote.service';
 import { TaskService } from '../services/task.service';
-import { TodoSearchComponent } from '../todo-search/todo-search.component';
+import { TodoDetailComponent } from '../todo-detail/todo-detail.component';
 import { TodoFormComponent } from '../todo-form/todo-form.component';
+import { TodoListComponent } from '../todo-list/todo-list.component';
+import { TodoSearchComponent } from '../todo-search/todo-search.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-todo-page',
   standalone: true,
   imports: [
     NgIf,
@@ -35,7 +34,7 @@ import { TodoFormComponent } from '../todo-form/todo-form.component';
   templateUrl: './todo-page.component.html',
   styleUrls: ['./todo-page.component.css'],
 })
-export class AppComponent implements OnInit {
+export class TodoPageComponent implements OnInit {
   taskService = inject(TaskService);
 
   tasks$!: Observable<Todo[]>;
