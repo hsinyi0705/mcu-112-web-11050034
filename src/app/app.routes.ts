@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 
-import { TodoPageComponent } from './todo-page/todo-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { todoResolver } from './resolver/todo.resolver';
 import { TodoDetailPageComponent } from './todo-detail-page/todo-detail-page.component';
 import { TodoFormPageComponent } from './todo-form-page/todo-form-page.component';
+import { TodoPageComponent } from './todo-page/todo-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     path: 'todo-form/:id',
     component: TodoFormPageComponent,
     data: { title: '待辦事項編輯' },
+    resolve: { formData: todoResolver },
   },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
